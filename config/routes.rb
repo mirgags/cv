@@ -1,8 +1,12 @@
 Resume::Application.routes.draw do
-  get "static_pages/references"
-  get "static_pages/resume"
-  get "static_pages/Resume"
-  get "static_pages/home"
+  root 'static_pages#home'
+  match '/resume', to: 'static_pages#resume', via: 'get'
+  match '/references', to: 'static_pages#references', via: 'get'
+  match '/about', to: 'static_pages#about', via: 'get'
+  #get "static_pages/references"
+  #get "static_pages/resume"
+  #get "static_pages/Resume"
+  #get "static_pages/home"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
